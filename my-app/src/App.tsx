@@ -4,7 +4,18 @@ import './App.css';
 import { TabPanel } from './components/TabPanel';
 
 function App() {
-  return <TabPanel></TabPanel>
+  
+
+  return <TabPanel tabs={[
+    {
+      title: "Tab X",
+      content: "Conteúdo X"
+    },
+    {
+      title: "Tab Y",
+      content: "Conteúdo Y"
+    }
+  ]}></TabPanel>
 }
 
 export default App;
