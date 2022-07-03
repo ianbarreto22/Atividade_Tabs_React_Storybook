@@ -1,0 +1,60 @@
+label {
+    font-weight: bold;
+}
+
+form {
+    margin-right: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 3px rgb(75, 75, 75);
+}
+
+
+form .title {
+    font-weight: bold;
+    font-size: 30px;
+    padding: 15px;
+}
+
+form p {
+    font-weight: bold;
+    padding: 25px;
+}
+
+form input {
+    padding: 5px;
+}
+
+.linha{
+    clear: both;
+}
+
+.col-25 {
+    width: 25%;
+}
+
+.col-35 {
+    width: 35%;
+}
+
+.b-box{
+    margin-left: 85%;
+}
+
+.button{
+    background-color: black;
+    color: white;
+    padding: 13px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.button:disabled{
+    background-color: gray;
+}
+
+
+
+form .error {
+    padding: 10px;
+    color: red;
+}

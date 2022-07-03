@@ -11,24 +11,18 @@ export interface TabPanelProps {
 
 export function TabPanel({tabs}: TabPanelProps) {
 
-    const [currentContent, setCurrentContent] = useState('Clique em uma tab.')
+    const [currentTab, setCurrentTab] = useState(0)
 
-    function setContent(content: string){
-        if(content == currentContent){
-            setCurrentContent("Clique em uma tab.")
-        }
-        else{
-            console.log(content)
-            setCurrentContent(content)
-        }
+    function setTab(index: number){
+        setCurrentTab(index)
     }
 
-   const tab_list = tabs.map(tab => <Tab key={tab.title} title={tab.title} content={tab.content} onSelection={setContent} selected={currentContent}/>)
-   return <div className='panel'>
+   const tab_list = tabs.map((tab, i)=> <Tab key={i} title={tab.title} index={i} content={tab.content} onSelection={setTab} selected={currentTab}/>)
+   return (<div className='panel'>
        {tab_list}
 
-       <div className='box'>
-           <p>{currentContent}</p>
-       </div>
-   </div>
+       {tabs.length >=1 && <div className='box'>
+           <p>{tabs[currentTab].content}</p>
+       </div>}
+   </div>)
 }

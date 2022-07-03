@@ -1,17 +1,18 @@
 import './Tab.css'
 
-interface TabProps {
+export interface TabProps {
   title: string
   content: string
-  onSelection: Function
-  selected: string
+  index?: number
+  onSelection?: (value: number) => void
+  selected?: number
 }
 
 export function Tab(props: TabProps) {
 
   return (
-    <button onClick={() => props.onSelection(props.content)}
-    className={props.content === props.selected ? 'selected' : ''}> 
+    <button onClick={() => props.onSelection && props.onSelection(props.index!)}
+    className={props.index === props.selected ? 'selected' : ''}> 
         {props.title}
     </button>
   )
